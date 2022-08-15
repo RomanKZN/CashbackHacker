@@ -1,28 +1,28 @@
 package ru.netology.unit;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashbackHackerTest {
 
     @Test
-    void shouldAdviseToBuyInAdditionFor100() {
+    public void shouldAdviseToBuyInAdditionFor100() {
         CashbackHacker cashbackHacker = new CashbackHacker();
         int amount = 900;
-        int actual = cashbackHacker.remain(amount);
         int expected = 100;
+        int actual = cashbackHacker.remain(amount);
 
-        assertEquals(actual, expected);
+
+        assertEquals(expected, actual);
     }
 
     @Test
-    void shouldNotSayThatYouNeedToBuyMoreFor1000() {
+    public void shouldNotSayThatYouNeedToBuyMoreFor1000() {
         CashbackHacker cashbackHacker = new CashbackHacker();
         int amount = 1000;
         int actual = cashbackHacker.remain(amount);
         int expected = 0;
         assertEquals(actual, expected);
     }
-
 }
